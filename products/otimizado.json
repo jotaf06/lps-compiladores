@@ -1,0 +1,4 @@
+{
+  "name": "otimizado",
+  "features": ["semantic", "constant_folding", "dead_code", "codegen_vm"]
+}

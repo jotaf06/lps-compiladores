@@ -1,0 +1,18 @@
+# fatorial de 5, depois dois ifs com condição constante
+let n = 5;
+let r = 1;
+while n > 0 {
+    r = r * n;
+    n = n - 1;
+}
+print r;
+
+if 2 + 3 > 4 {
+    print 100;
+} else {
+    print 0;
+}
+
+if 0 {
+    print 999;
+}

@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 612" width="880" height="612">
+<rect width="100%" height="100%" fill="#fff"/>
+<defs><marker id="open" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M1,1 L9,5 L1,9" fill="none" stroke="#1d2330" stroke-width="1.4"/></marker><marker id="solid" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M1,1 L9,5 L1,9 z" fill="#1d2330" stroke="#1d2330"/></marker></defs>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="start" fill="#1d2330"><tspan x="20" y="15.8">Núcleo (sempre presente)</tspan></text>
+<rect x="20.0" y="28" width="150" height="38" rx="2" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<rect x="13.0" y="35" width="14" height="7" rx="1" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<rect x="13.0" y="52" width="14" height="7" rx="1" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="99" y="50.9">API Gateway</tspan></text>
+<rect x="190.0" y="28" width="150" height="38" rx="2" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<rect x="183.0" y="35" width="14" height="7" rx="1" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<rect x="183.0" y="52" width="14" height="7" rx="1" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="269" y="50.9">Orchestrator</tspan></text>
+<rect x="360.0" y="28" width="150" height="38" rx="2" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<rect x="353.0" y="35" width="14" height="7" rx="1" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<rect x="353.0" y="52" width="14" height="7" rx="1" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="439" y="50.9">Registry</tspan></text>
+<rect x="530.0" y="28" width="150" height="38" rx="2" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<rect x="523.0" y="35" width="14" height="7" rx="1" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<rect x="523.0" y="52" width="14" height="7" rx="1" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="609" y="50.9">Lexer</tspan></text>
+<rect x="700.0" y="28" width="150" height="38" rx="2" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<rect x="693.0" y="35" width="14" height="7" rx="1" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<rect x="693.0" y="52" width="14" height="7" rx="1" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="779" y="50.9">Parser</tspan></text>
+<polyline points="177.0,47.0 183.0,47.0" fill="none" stroke="#1d2330" stroke-width="1.5" marker-end="url(#open)"/>
+<polyline points="347.0,47.0 353.0,47.0" fill="none" stroke="#1d2330" stroke-width="1.5" marker-end="url(#open)"/>
+<polygon points="225.0,110.0 159.0,182.0 291.0,182.0" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<polygon points="225.0,110.0 197.3,140.2 252.7,140.2" fill="#1d2330" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#fff"><tspan x="225" y="134.7">VP</tspan></text>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="225" y="167.1">Semântica</tspan></text>
+<polyline points="225.0,182.0 225.0,224.0" fill="none" stroke="#1d2330" stroke-width="1.5" stroke-dasharray="6 4"/>
+<rect x="163.0" y="224" width="124" height="40" rx="0" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<rect x="163.0" y="224" width="20" height="16" rx="0" fill="#1d2330" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#fff"><tspan x="173.0" y="235.5">V</tspan></text>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="225.0" y="245.0">Análise</tspan><tspan x="225.0" y="258.7">Semântica</tspan></text>
+<rect x="163.0" y="298" width="124" height="36" rx="2" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<rect x="156.0" y="305" width="14" height="7" rx="1" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<rect x="156.0" y="320" width="14" height="7" rx="1" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="229.0" y="319.9">Semantic</tspan></text>
+<polyline points="225.0,298.0 225.0,264.0" fill="none" stroke="#1d2330" stroke-width="1.5" stroke-dasharray="2 3" marker-end="url(#open)"/>
+<polygon points="665.0,110.0 599.0,182.0 731.0,182.0" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<polygon points="665.0,110.0 637.3,140.2 692.7,140.2" fill="#1d2330" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#fff"><tspan x="665" y="134.7">VP</tspan></text>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="665" y="167.1">Otimização</tspan></text>
+<polyline points="665.0,182.0 595.0,224.0" fill="none" stroke="#1d2330" stroke-width="1.5" stroke-dasharray="6 4"/>
+<polyline points="665.0,182.0 735.0,224.0" fill="none" stroke="#1d2330" stroke-width="1.5" stroke-dasharray="6 4"/>
+<path d="M 642.5 195.0 A 26 26 0 0 0 687.5 195.0" fill="none" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="10" font-weight="normal" text-anchor="start" fill="#1d2330"><tspan x="673" y="221.5">[0..2]</tspan></text>
+<rect x="533.0" y="224" width="124" height="40" rx="0" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<rect x="533.0" y="224" width="20" height="16" rx="0" fill="#1d2330" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#fff"><tspan x="543.0" y="235.5">V</tspan></text>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="595.0" y="245.0">Constant</tspan><tspan x="595.0" y="258.7">Folding</tspan></text>
+<rect x="673.0" y="224" width="124" height="40" rx="0" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<rect x="673.0" y="224" width="20" height="16" rx="0" fill="#1d2330" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#fff"><tspan x="683.0" y="235.5">V</tspan></text>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="735.0" y="245.0">Dead Code</tspan><tspan x="735.0" y="258.7">Elimination</tspan></text>
+<rect x="533.0" y="298" width="124" height="36" rx="2" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<rect x="526.0" y="305" width="14" height="7" rx="1" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<rect x="526.0" y="320" width="14" height="7" rx="1" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="599.0" y="319.9">ConstantFolding</tspan></text>
+<polyline points="595.0,298.0 595.0,264.0" fill="none" stroke="#1d2330" stroke-width="1.5" stroke-dasharray="2 3" marker-end="url(#open)"/>
+<rect x="673.0" y="298" width="124" height="36" rx="2" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<rect x="666.0" y="305" width="14" height="7" rx="1" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<rect x="666.0" y="320" width="14" height="7" rx="1" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="739.0" y="319.9">DeadCode</tspan></text>
+<polyline points="735.0,298.0 735.0,264.0" fill="none" stroke="#1d2330" stroke-width="1.5" stroke-dasharray="2 3" marker-end="url(#open)"/>
+<polygon points="225.0,370.0 159.0,442.0 291.0,442.0" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<polygon points="225.0,370.0 197.3,400.2 252.7,400.2" fill="#1d2330" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#fff"><tspan x="225" y="394.7">VP</tspan></text>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="225" y="427.1">Backend</tspan></text>
+<polyline points="225.0,442.0 85.0,484.0" fill="none" stroke="#1d2330" stroke-width="1.5" stroke-dasharray="6 4"/>
+<polyline points="225.0,442.0 225.0,484.0" fill="none" stroke="#1d2330" stroke-width="1.5" stroke-dasharray="6 4"/>
+<polyline points="225.0,442.0 365.0,484.0" fill="none" stroke="#1d2330" stroke-width="1.5" stroke-dasharray="6 4"/>
+<path d="M 202.5 455.0 A 26 26 0 0 0 247.5 455.0" fill="none" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="10" font-weight="normal" text-anchor="start" fill="#1d2330"><tspan x="233" y="481.5">[1..1]</tspan></text>
+<rect x="23.0" y="484" width="124" height="40" rx="0" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<rect x="23.0" y="484" width="20" height="16" rx="0" fill="#1d2330" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#fff"><tspan x="33.0" y="495.5">V</tspan></text>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="85.0" y="511.9">Python</tspan></text>
+<rect x="163.0" y="484" width="124" height="40" rx="0" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<rect x="163.0" y="484" width="20" height="16" rx="0" fill="#1d2330" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#fff"><tspan x="173.0" y="495.5">V</tspan></text>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="225.0" y="511.9">C</tspan></text>
+<rect x="303.0" y="484" width="124" height="40" rx="0" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<rect x="303.0" y="484" width="20" height="16" rx="0" fill="#1d2330" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#fff"><tspan x="313.0" y="495.5">V</tspan></text>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="365.0" y="505.0">Máquina</tspan><tspan x="365.0" y="518.7">de Pilha</tspan></text>
+<rect x="23.0" y="558" width="124" height="36" rx="2" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<rect x="16.0" y="565" width="14" height="7" rx="1" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<rect x="16.0" y="580" width="14" height="7" rx="1" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="89.0" y="579.9">CodegenPython</tspan></text>
+<polyline points="85.0,558.0 85.0,524.0" fill="none" stroke="#1d2330" stroke-width="1.5" stroke-dasharray="2 3" marker-end="url(#open)"/>
+<rect x="163.0" y="558" width="124" height="36" rx="2" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<rect x="156.0" y="565" width="14" height="7" rx="1" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<rect x="156.0" y="580" width="14" height="7" rx="1" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="229.0" y="579.9">CodegenC</tspan></text>
+<polyline points="225.0,558.0 225.0,524.0" fill="none" stroke="#1d2330" stroke-width="1.5" stroke-dasharray="2 3" marker-end="url(#open)"/>
+<rect x="303.0" y="558" width="124" height="36" rx="2" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<rect x="296.0" y="565" width="14" height="7" rx="1" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<rect x="296.0" y="580" width="14" height="7" rx="1" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="369.0" y="579.9">CodegenVM</tspan></text>
+<polyline points="365.0,558.0 365.0,524.0" fill="none" stroke="#1d2330" stroke-width="1.5" stroke-dasharray="2 3" marker-end="url(#open)"/>
+<polygon points="665.0,370.0 599.0,442.0 731.0,442.0" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<polygon points="665.0,370.0 637.3,400.2 692.7,400.2" fill="#1d2330" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#fff"><tspan x="665" y="394.7">VP</tspan></text>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="665" y="427.1">Recomendação</tspan></text>
+<polyline points="665.0,442.0 665.0,484.0" fill="none" stroke="#1d2330" stroke-width="1.5" stroke-dasharray="6 4"/>
+<rect x="603.0" y="484" width="124" height="40" rx="0" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<rect x="603.0" y="484" width="20" height="16" rx="0" fill="#1d2330" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#fff"><tspan x="613.0" y="495.5">V</tspan></text>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="665.0" y="505.0">Recomendação</tspan><tspan x="665.0" y="518.7">por histórico</tspan></text>
+<rect x="603.0" y="558" width="124" height="36" rx="2" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<rect x="596.0" y="565" width="14" height="7" rx="1" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<rect x="596.0" y="580" width="14" height="7" rx="1" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="669.0" y="579.9">Recommender</tspan></text>
+<polyline points="665.0,558.0 665.0,524.0" fill="none" stroke="#1d2330" stroke-width="1.5" stroke-dasharray="2 3" marker-end="url(#open)"/>
+<polyline points="533.0,244.0 287.0,244.0" fill="none" stroke="#1d2330" stroke-width="1.5" stroke-dasharray="2 3" marker-end="url(#open)"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="10" font-weight="normal" text-anchor="middle" fill="#1d2330" font-style="italic"><tspan x="410.0" y="237.5">requires_v_v</tspan></text>
+<polyline points="710.0,264.0 710.0,277.0 620.0,277.0 620.0,264.0" fill="none" stroke="#1d2330" stroke-width="1.5" stroke-dasharray="2 3" marker-end="url(#open)"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="10" font-weight="normal" text-anchor="middle" fill="#1d2330" font-style="italic"><tspan x="665.0" y="292.5">requires_v_v</tspan></text>
+</svg>

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 640" width="780" height="640">
+<rect width="100%" height="100%" fill="#fff"/>
+<defs><marker id="open" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M1,1 L9,5 L1,9" fill="none" stroke="#1d2330" stroke-width="1.4"/></marker><marker id="solid" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M1,1 L9,5 L1,9 z" fill="#1d2330" stroke="#1d2330"/></marker></defs>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="start" fill="#1d2330"><tspan x="12" y="18.6">Client</tspan></text>
+<rect x="150" y="28" width="220" height="50" rx="3" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="260.0" y="49.7">Navegador</tspan><tspan x="260.0" y="64.7">(tela de configuração)</tspan></text>
+<rect x="410" y="28" width="220" height="50" rx="3" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="520.0" y="49.7">CLI</tspan><tspan x="520.0" y="64.7">(lps.py, curl)</tspan></text>
+<polyline points="260.0,78.0 260.0,130.0" fill="none" stroke="#1d2330" stroke-width="1.5" marker-end="url(#solid)"/>
+<polyline points="520.0,78.0 390.0,130.0" fill="none" stroke="#1d2330" stroke-width="1.5" marker-end="url(#solid)"/>
+<polyline points="0.0,100.0 780.0,100.0" fill="none" stroke="#1d2330" stroke-width="1" stroke-dasharray="6 4"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="start" fill="#1d2330"><tspan x="12" y="118.5">Gateway</tspan></text>
+<rect x="270" y="130" width="240" height="56" rx="3" fill="#eef2fb" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="390.0" y="154.7">API Gateway (porta 8000)</tspan><tspan x="390.0" y="169.7">FastAPI: / · /compile · /api/*</tspan></text>
+<polyline points="0.0,206.0 780.0,206.0" fill="none" stroke="#1d2330" stroke-width="1" stroke-dasharray="6 4"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="start" fill="#1d2330"><tspan x="12" y="224.6">Services</tspan></text>
+<polyline points="390.0,186.0 390.0,238.0" fill="none" stroke="#1d2330" stroke-width="1.5" marker-end="url(#solid)"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="10" font-weight="normal" text-anchor="start" fill="#1d2330" font-style="italic"><tspan x="398" y="217.5">HTTP POST /run (uma chamada por fase)</tspan></text>
+<rect x="20" y="238" width="740" height="340" rx="6" fill="#f3f4f7" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="start" fill="#1d2330"><tspan x="32" y="255.8">Rede interna do Docker Compose: um container por microservice (porta interna 8000)</tspan></text>
+<rect x="40" y="275" width="130" height="58" rx="3" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="105.0" y="300.7">lexer</tspan><tspan x="105.0" y="315.7">:8001</tspan></text>
+<rect x="184" y="275" width="130" height="58" rx="3" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="249.0" y="300.7">parser</tspan><tspan x="249.0" y="315.7">:8002</tspan></text>
+<rect x="328" y="275" width="130" height="58" rx="3" fill="#fff" stroke="#1d2330" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="393.0" y="300.7">semantic</tspan><tspan x="393.0" y="315.7">:8003</tspan></text>
+<rect x="472" y="275" width="130" height="58" rx="3" fill="#fff" stroke="#1d2330" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="537.0" y="300.7">constant_folding</tspan><tspan x="537.0" y="315.7">:8004</tspan></text>
+<rect x="616" y="275" width="130" height="58" rx="3" fill="#fff" stroke="#1d2330" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="681.0" y="300.7">dead_code</tspan><tspan x="681.0" y="315.7">:8005</tspan></text>
+<rect x="30" y="355" width="460" height="112" rx="4" fill="none" stroke="#1d2330" stroke-width="1.5" stroke-dasharray="2 3"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="10" font-weight="normal" text-anchor="start" fill="#1d2330" font-style="italic"><tspan x="40" y="371.5">Backend: exatamente um</tspan></text>
+<rect x="40" y="385" width="130" height="58" rx="3" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="105.0" y="410.7">codegen_python</tspan><tspan x="105.0" y="425.7">:8006</tspan></text>
+<rect x="184" y="385" width="130" height="58" rx="3" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="249.0" y="410.7">codegen_c</tspan><tspan x="249.0" y="425.7">:8007</tspan></text>
+<rect x="328" y="385" width="130" height="58" rx="3" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="393.0" y="410.7">codegen_vm</tspan><tspan x="393.0" y="425.7">:8008</tspan></text>
+<rect x="616" y="385" width="130" height="58" rx="3" fill="#fff" stroke="#1d2330" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="681.0" y="410.7">recommender</tspan><tspan x="681.0" y="425.7">:8009</tspan></text>
+<polyline points="681.0,443.0 681.0,488.0" fill="none" stroke="#1d2330" stroke-width="1.5" marker-end="url(#solid)"/>
+<ellipse cx="681" cy="500" rx="55" ry="12" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<path d="M626 500 V540 A55 12 0 0 0 736 540 V500" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<ellipse cx="681" cy="500" rx="55" ry="12" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="681" y="527.0">SQLite</tspan><tspan x="681" y="540.7">(histórico)</tspan></text>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="start" fill="#1d2330"><tspan x="40" y="490.1">Ordem de chamada do gateway:</tspan><tspan x="40" y="503.9">lexer → parser → [semantic] → [constant_folding]</tspan><tspan x="40" y="517.6">→ [dead_code] → um backend</tspan></text>
+<polyline points="30.0,604.0 70.0,604.0" fill="none" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="start" fill="#1d2330"><tspan x="78" y="607.9">obrigatório</tspan></text>
+<polyline points="170.0,604.0 210.0,604.0" fill="none" stroke="#1d2330" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="start" fill="#1d2330"><tspan x="218" y="607.9">opcional (borda tracejada)</tspan></text>
+</svg>

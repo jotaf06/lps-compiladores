@@ -1,0 +1,4 @@
+{
+  "name": "seguro",
+  "features": ["semantic", "codegen_c"]
+}

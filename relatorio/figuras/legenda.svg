@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 830 215" width="830" height="215">
+<rect width="100%" height="100%" fill="#fff"/>
+<defs><marker id="open" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M1,1 L9,5 L1,9" fill="none" stroke="#1d2330" stroke-width="1.4"/></marker><marker id="solid" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M1,1 L9,5 L1,9 z" fill="#1d2330" stroke="#1d2330"/></marker></defs>
+<polygon points="100.0,14.0 58.0,70.0 142.0,70.0" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<polygon points="100.0,14.0 82.4,37.5 117.6,37.5" fill="#1d2330" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#fff"><tspan x="100" y="34.0">VP</tspan></text>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="100" y="59.3">nome</tspan></text>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="100" y="101.8">Ponto de variação (VP)</tspan></text>
+<rect x="250.0" y="26" width="90" height="34" rx="0" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<rect x="250.0" y="26" width="20" height="16" rx="0" fill="#1d2330" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#fff"><tspan x="260.0" y="37.5">V</tspan></text>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="295" y="50.9">nome</tspan></text>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="295" y="101.8">Variante (V)</tspan></text>
+<polyline points="440.0,34.0 540.0,34.0" fill="none" stroke="#1d2330" stroke-width="1.5" stroke-dasharray="6 4"/>
+<polyline points="440.0,62.0 540.0,62.0" fill="none" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="490" y="95.0">dependência opcional (tracejada)</tspan><tspan x="490" y="108.7">e obrigatória (contínua)</tspan></text>
+<polyline points="685.0,14.0 645.0,50.0" fill="none" stroke="#1d2330" stroke-width="1.5" stroke-dasharray="6 4"/>
+<polyline points="685.0,14.0 725.0,50.0" fill="none" stroke="#1d2330" stroke-width="1.5" stroke-dasharray="6 4"/>
+<path d="M 667.7 24.0 A 20 20 0 0 0 702.3 24.0" fill="none" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="10" font-weight="normal" text-anchor="start" fill="#1d2330"><tspan x="735" y="43.5">[min..max]</tspan></text>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="685" y="101.8">escolha alternativa</tspan></text>
+<polyline points="40.0,150.0 160.0,150.0" fill="none" stroke="#1d2330" stroke-width="1.5" stroke-dasharray="2 3" marker-end="url(#open)"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="100" y="193.8">dependência de artefato</tspan></text>
+<polyline points="235.0,150.0 355.0,150.0" fill="none" stroke="#1d2330" stroke-width="1.5" stroke-dasharray="9 3 2 3" marker-end="url(#open)"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="295" y="187.0">dependência de artefato</tspan><tspan x="295" y="200.7">de um VP</tspan></text>
+<polyline points="430.0,160.0 550.0,160.0" fill="none" stroke="#1d2330" stroke-width="1.5" stroke-dasharray="2 3" marker-end="url(#open)"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="10" font-weight="normal" text-anchor="middle" fill="#1d2330" font-style="italic"><tspan x="490" y="149.5">requires_v_v</tspan></text>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="490" y="187.0">restrição: a variante de</tspan><tspan x="490" y="200.7">origem requer a de destino</tspan></text>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="685" y="154.2">[0..1]  [1..1]  [0..2]</tspan></text>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="685" y="187.0">cardinalidade: quantas</tspan><tspan x="685" y="200.7">variantes escolher</tspan></text>
+</svg>

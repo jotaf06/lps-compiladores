@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 480" width="740" height="480">
+<rect width="100%" height="100%" fill="#fff"/>
+<defs><marker id="open" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M1,1 L9,5 L1,9" fill="none" stroke="#1d2330" stroke-width="1.4"/></marker><marker id="solid" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M1,1 L9,5 L1,9 z" fill="#1d2330" stroke="#1d2330"/></marker></defs>
+<polyline points="145.0,200.0 235.0,53.0" fill="none" stroke="#1d2330" stroke-width="1.5"/>
+<polyline points="145.0,200.0 235.0,116.0" fill="none" stroke="#1d2330" stroke-width="1.5"/>
+<polyline points="145.0,200.0 235.0,179.0" fill="none" stroke="#1d2330" stroke-width="1.5"/>
+<polyline points="145.0,200.0 235.0,284.0" fill="none" stroke="#1d2330" stroke-width="1.5"/>
+<polyline points="145.0,200.0 235.0,368.0" fill="none" stroke="#1d2330" stroke-width="1.5"/>
+<polyline points="410.0,53.0 505.0,32.0" fill="none" stroke="#1d2330" stroke-width="1.5"/>
+<polyline points="410.0,53.0 505.0,74.0" fill="none" stroke="#1d2330" stroke-width="1.5"/>
+<polyline points="410.0,179.0 505.0,158.0" fill="none" stroke="#1d2330" stroke-width="1.5"/>
+<polyline points="410.0,179.0 505.0,200.0" fill="none" stroke="#1d2330" stroke-width="1.5"/>
+<polyline points="410.0,284.0 505.0,242.0" fill="none" stroke="#1d2330" stroke-width="1.5"/>
+<polyline points="410.0,284.0 505.0,284.0" fill="none" stroke="#1d2330" stroke-width="1.5"/>
+<polyline points="410.0,284.0 505.0,326.0" fill="none" stroke="#1d2330" stroke-width="1.5"/>
+<rect x="15" y="184.0" width="130" height="32" rx="3" fill="#dfe8fb" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#1d2330"><tspan x="80.0" y="204.6">Compilador</tspan></text>
+<rect x="235" y="37.0" width="175" height="32" rx="3" fill="#eef2fb" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="322.5" y="57.2">Frontend</tspan></text>
+<rect x="235" y="100.0" width="175" height="32" rx="3" fill="#eef2fb" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="322.5" y="112.7">Análise</tspan><tspan x="322.5" y="127.7">Semântica</tspan></text>
+<rect x="235" y="163.0" width="175" height="32" rx="3" fill="#eef2fb" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="322.5" y="183.2">Otimização</tspan></text>
+<rect x="235" y="268.0" width="175" height="32" rx="3" fill="#eef2fb" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="322.5" y="288.2">Backend</tspan></text>
+<rect x="235" y="352.0" width="175" height="32" rx="3" fill="#eef2fb" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="322.5" y="364.7">Recomendação</tspan><tspan x="322.5" y="379.7">(microservice)</tspan></text>
+<rect x="505" y="16.0" width="205" height="32" rx="3" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="607.5" y="36.2">Lexer</tspan></text>
+<rect x="505" y="58.0" width="205" height="32" rx="3" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="607.5" y="78.2">Parser</tspan></text>
+<rect x="505" y="142.0" width="205" height="32" rx="3" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="607.5" y="162.2">Constant Folding</tspan></text>
+<rect x="505" y="184.0" width="205" height="32" rx="3" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="607.5" y="204.2">Dead Code Elimination</tspan></text>
+<rect x="505" y="226.0" width="205" height="32" rx="3" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="607.5" y="246.2">Python</tspan></text>
+<rect x="505" y="268.0" width="205" height="32" rx="3" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="607.5" y="288.2">C</tspan></text>
+<rect x="505" y="310.0" width="205" height="32" rx="3" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle" fill="#1d2330"><tspan x="607.5" y="322.7">Máquina de Pilha</tspan><tspan x="607.5" y="337.7">(bytecode + VM)</tspan></text>
+<circle cx="235" cy="53.0" r="5" fill="#1d2330" stroke="#1d2330" stroke-width="1.5"/>
+<circle cx="235" cy="116" r="5" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<circle cx="235" cy="179.0" r="5" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<circle cx="235" cy="284" r="5" fill="#1d2330" stroke="#1d2330" stroke-width="1.5"/>
+<circle cx="235" cy="368" r="5" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<circle cx="505" cy="32" r="5" fill="#1d2330" stroke="#1d2330" stroke-width="1.5"/>
+<circle cx="505" cy="74" r="5" fill="#1d2330" stroke="#1d2330" stroke-width="1.5"/>
+<circle cx="505" cy="158" r="5" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<circle cx="505" cy="200" r="5" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<path d="M 448.4 267.0 A 42 42 0 0 1 448.4 301.0" fill="none" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="10" font-weight="normal" text-anchor="start" fill="#1d2330"><tspan x="458" y="277.5">XOR</tspan></text>
+<circle cx="25" cy="410" r="5" fill="#1d2330" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="start" fill="#1d2330"><tspan x="36" y="413.9">obrigatória</tspan></text>
+<circle cx="140" cy="410" r="5" fill="#fff" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="start" fill="#1d2330"><tspan x="151" y="413.9">opcional</tspan></text>
+<path d="M 235 401 A 12 12 0 0 1 235 419" fill="none" stroke="#1d2330" stroke-width="1.5"/>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="start" fill="#1d2330"><tspan x="252" y="413.9">alternativa (XOR: exatamente uma)</tspan></text>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="start" fill="#1d2330"><tspan x="15" y="443.9">Restrições: Constant Folding requer Análise Semântica; Dead Code Elimination requer Constant Folding.</tspan></text>
+<text font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="start" fill="#1d2330"><tspan x="15" y="463.9">Recomendação é um microservice fora do pipeline de compilação.</tspan></text>
+</svg>

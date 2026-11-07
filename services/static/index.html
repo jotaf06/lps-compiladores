@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LPS de Compiladores</title>
+<style>
+  :root {
+    --bg: #f6f7f9; --card: #ffffff; --text: #1d2330; --muted: #5d6677; --line: #d9dde5;
+    --accent: #2f6fed; --ok: #1f9d55; --bad: #d64545; --code: #eef1f6;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #14171d; --card: #1c2029; --text: #e6e9f0; --muted: #98a2b5; --line: #2d3340;
+            --accent: #6b9bff; --ok: #4cc47f; --bad: #ff7b7b; --code: #12151b; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 15px/1.45 system-ui, sans-serif; background: var(--bg); color: var(--text); }
+  header { padding: 14px 16px; border-bottom: 1px solid var(--line); background: var(--card); }
+  header h1 { margin: 0; font-size: 18px; }
+  header p { margin: 2px 0 0; color: var(--muted); font-size: 13px; }
+  main { display: grid; grid-template-columns: 1fr; gap: 14px; padding: 16px; max-width: 1200px; margin: 0 auto; }
+  @media (min-width: 900px) { main { grid-template-columns: 300px 1fr 300px; align-items: start; } }
+  section { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 14px; }
+  h2 { margin: 0 0 10px; font-size: 15px; }
+  h3 { margin: 12px 0 6px; font-size: 13px; color: var(--muted); font-weight: 600; }
+  label { display: flex; gap: 8px; align-items: center; padding: 2px 0; }
+  input[type=text], textarea, select {
+    width: 100%; padding: 7px 9px; border: 1px solid var(--line); border-radius: 6px;
+    background: var(--bg); color: var(--text); font: inherit;
+  }
+  textarea { font: 13px/1.4 ui-monospace, monospace; min-height: 190px; resize: vertical; }
+  button { padding: 7px 12px; border: 1px solid var(--accent); background: var(--accent); color: #fff;
+           border-radius: 6px; font: inherit; cursor: pointer; }
+  button.secondary { background: transparent; color: var(--accent); }
+  button + button { margin-left: 6px; }
+  pre { background: var(--code); padding: 10px; border-radius: 6px; overflow: auto; font-size: 12.5px; margin: 6px 0; max-height: 260px; }
+  .row { display: flex; gap: 8px; margin-top: 8px; align-items: center; flex-wrap: wrap; }
+  .muted { color: var(--muted); font-size: 13px; }
+  .err { color: var(--bad); font-size: 13px; }
+  .ok { color: var(--ok); font-size: 13px; }
+  .chips { display: flex; gap: 6px; flex-wrap: wrap; margin: 6px 0; }
+  .chip { border: 1px solid var(--accent); color: var(--accent); border-radius: 999px; padding: 2px 9px; font-size: 12.5px; }
+  .svc { display: flex; justify-content: space-between; padding: 3px 0; font-size: 13.5px; }
+  .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 7px; background: var(--bad); }
+  .dot.up { background: var(--ok); }
+  ul { margin: 6px 0; padding-left: 18px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>LPS de Compiladores</h1>
+  <p>Selecione as features, construa o produto e compile. Cada fase roda em um microservice.</p>
+</header>
+<main>
+  <!-- Configuração do produto -->
+  <section>
+    <h2>1. Configuração do produto</h2>
+    <label class="muted">Produto pronto
+      <select id="preset"><option value="">(personalizado)</option></select>
+    </label>
+    <h3>Obrigatórias</h3><div id="mandatory"></div>
+    <h3>Opcionais</h3><div id="optional"></div>
+    <h3>Backend (escolha um)</h3><div id="backends"></div>
+    <h3>Extras</h3><div id="extras"></div>
+    <div id="validation" style="margin-top:10px"></div>
+    <div class="row">
+      <input type="text" id="pname" placeholder="nome-do-produto" style="flex:1">
+      <button id="build">Construir produto</button>
+    </div>
+    <div id="built"></div>
+  </section>
+
+  <!-- Compilação -->
+  <section>
+    <h2>2. Compilar</h2>
+    <label class="muted">Usuário
+      <input type="text" id="user" value="aluno1">
+    </label>
+    <h3>Programa-fonte</h3>
+    <textarea id="source" spellcheck="false"># fatorial de 5
+let n = 5;
+let r = 1;
+while n > 0 {
+    r = r * n;
+    n = n - 1;
+}
+print r;
+if 2 + 3 > 4 { print 100; } else { print 0; }
+if 0 { print 999; }
+</textarea>
+    <div class="row"><button id="compile">Compilar</button></div>
+    <div id="result"></div>
+  </section>
+
+  <!-- Recomendação e serviços -->
+  <aside style="display:grid;gap:14px">
+    <section>
+      <h2>3. Recomendação</h2>
+      <p class="muted">Baseada no histórico do usuário (ative o extra "Recomendação" ao compilar).</p>
+      <button class="secondary" id="recommend">Ver recomendação</button>
+      <div id="rec"></div>
+    </section>
+    <section>
+      <h2>4. Microservices</h2>
+      <div id="services"></div>
+      <div class="row"><button class="secondary" id="refresh">Atualizar</button></div>
+    </section>
+  </aside>
+</main>
+
+<script>
+const LABEL = {
+  lexer: "Lexer", parser: "Parser", semantic: "Análise Semântica",
+  constant_folding: "Constant Folding", dead_code: "Dead Code Elimination",
+  codegen_python: "Backend Python", codegen_c: "Backend C", codegen_vm: "Backend Máquina de Pilha",
+  recommendation: "Recomendação (perfil do usuário)",
+};
+const $ = (id) => document.getElementById(id);
+let M = null;
+let selected = new Set();
+
+async function api(path, body) {
+  const opts = body === undefined ? {} : {
+    method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(body),
+  };
+  const r = await fetch(path, opts);
+  const data = await r.json().catch(() => ({}));
+  if (!r.ok) throw (Array.isArray(data.detail) ? data.detail : [String(data.detail || r.statusText)]);
+  return data;
+}
+
+function el(tag, props = {}, ...kids) {
+  const e = Object.assign(document.createElement(tag), props);
+  kids.forEach((k) => e.append(k));
+  return e;
+}
+
+// ---- seleção de features e restrições ----
+function addWithRequires(f) {
+  selected.add(f);
+  (M.requires[f] || []).forEach(addWithRequires);
+}
+function removeWithDependents(f) {
+  selected.delete(f);
+  Object.entries(M.requires).forEach(([g, needs]) => {
+    if (needs.includes(f) && selected.has(g)) removeWithDependents(g);
+  });
+}
+function toggle(f, on) {
+  if (on) addWithRequires(f); else removeWithDependents(f);
+  renderFeatures();
+}
+function pickBackend(b) {
+  M.backends.forEach((x) => selected.delete(x));
+  selected.add(b);
+  renderFeatures();
+}
+
+function featureBox(f, checked, disabled, onChange) {
+  const input = el("input", { type: "checkbox", checked, disabled });
+  input.onchange = () => onChange(input.checked);
+  return el("label", {}, input, LABEL[f] || f);
+}
+
+function renderFeatures() {
+  $("mandatory").replaceChildren(...M.mandatory.map((f) => featureBox(f, true, true, () => {})));
+  $("optional").replaceChildren(...M.optional.map((f) =>
+    featureBox(f, selected.has(f), false, (on) => toggle(f, on))));
+  $("backends").replaceChildren(...M.backends.map((b) => {
+    const input = el("input", { type: "radio", name: "backend", checked: selected.has(b) });
+    input.onchange = () => pickBackend(b);
+    return el("label", {}, input, LABEL[b]);
+  }));
+  $("extras").replaceChildren(...M.extras.map((f) =>
+    featureBox(f, selected.has(f), false, (on) => toggle(f, on))));
+  validateSelection();
+}
+
+async function validateSelection() {
+  const box = $("validation");
+  const r = await api("/api/validate", { features: [...selected] });
+  if (r.valid) {
+    box.replaceChildren(el("div", { className: "ok", textContent: "Configuração válida" }),
+      el("div", { className: "muted", textContent: "Pipeline: " + r.pipeline.join(" → ") }));
+  } else {
+    box.replaceChildren(...r.errors.map((e) => el("div", { className: "err", textContent: e })));
+  }
+}
+
+// ---- construção do produto ----
+$("build").onclick = async () => {
+  const out = $("built");
+  try {
+    const r = await api("/api/products", { name: $("pname").value.trim(), features: [...selected] });
+    out.replaceChildren(
+      el("div", { className: "ok", textContent: `Produto salvo em ${r.file}` }),
+      el("div", { className: "muted", textContent: "docker-compose.yml gerado:" }),
+      el("pre", { textContent: r.compose }));
+    M.products = (await api("/api/model")).products;  // inclui o produto recém-criado
+    loadPresets();
+    $("preset").value = r.name;
+  } catch (errs) {
+    out.replaceChildren(...errs.map((e) => el("div", { className: "err", textContent: e })));
+  }
+};
+
+function loadPresets() {
+  const sel = $("preset");
+  sel.replaceChildren(el("option", { value: "", textContent: "(personalizado)" }),
+    ...M.products.map((p) => el("option", { value: p.name, textContent: p.name })));
+}
+$("preset").onchange = () => {
+  const p = M.products.find((x) => x.name === $("preset").value);
+  if (!p) return;
+  selected = new Set(p.features);
+  M.mandatory.forEach((f) => selected.add(f));
+  renderFeatures();
+};
+
+// ---- compilação ----
+$("compile").onclick = async () => {
+  const out = $("result");
+  try {
+    const r = await api("/compile", {
+      source: $("source").value, features: [...selected], user: $("user").value.trim() || null,
+    });
+    const kids = [];
+    kids.push(el("h3", { textContent: "Microservices acionados" }));
+    kids.push(el("div", { className: "chips" },
+      ...r.pipeline.map((n) => el("span", { className: "chip", textContent: `${n} :${M.ports[n]}` }))));
+    if (r.errors) {
+      kids.push(...r.errors.map((e) => el("div", { className: "err", textContent: e })));
+    } else {
+      kids.push(el("h3", { textContent: `Código gerado (${r.target})` }));
+      kids.push(el("pre", { textContent: r.code }));
+      if (r.output !== undefined) {
+        kids.push(el("h3", { textContent: "Saída da execução (VM)" }));
+        kids.push(el("pre", { textContent: r.output }));
+      } else {
+        kids.push(el("div", { className: "muted", textContent: "Execute o código gerado fora da tela (apenas a VM executa aqui)." }));
+      }
+      if (r.history) kids.push(el("div", { className: "muted", textContent: "Histórico: " + r.history }));
+    }
+    out.replaceChildren(...kids);
+  } catch (errs) {
+    out.replaceChildren(...errs.map((e) => el("div", { className: "err", textContent: e })));
+  }
+  loadStatus();
+};
+
+// ---- recomendação ----
+$("recommend").onclick = async () => {
+  const box = $("rec");
+  try {
+    const r = await api("/api/recommend/" + encodeURIComponent($("user").value.trim() || "anonimo"));
+    const apply = el("button", { textContent: "Aplicar recomendação" });
+    apply.onclick = () => {
+      selected = new Set(r.features);
+      M.mandatory.forEach((f) => selected.add(f));
+      selected.add("recommendation");
+      renderFeatures();
+    };
+    box.replaceChildren(
+      el("div", { className: "chips" }, ...r.features.map((f) => el("span", { className: "chip", textContent: LABEL[f] || f }))),
+      el("ul", {}, ...r.reasons.map((x) => el("li", { textContent: x }))),
+      apply);
+  } catch (errs) {
+    box.replaceChildren(...errs.map((e) => el("div", { className: "err", textContent: e })));
+  }
+};
+
+// ---- status dos microservices ----
+async function loadStatus() {
+  const rows = await (await fetch("/api/status")).json();
+  $("services").replaceChildren(...rows.map((s) =>
+    el("div", { className: "svc" },
+      el("span", {}, el("span", { className: "dot" + (s.up ? " up" : "") }), s.name),
+      el("span", { className: "muted", textContent: ":" + s.port }))));
+}
+$("refresh").onclick = loadStatus;
+
+(async function init() {
+  M = await (await fetch("/api/model")).json();
+  selected = new Set(M.default.features);
+  M.mandatory.forEach((f) => selected.add(f));
+  loadPresets();
+  renderFeatures();
+  loadStatus();
+})();
+</script>
+</body>
+</html>
