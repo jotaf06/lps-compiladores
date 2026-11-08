@@ -6,17 +6,23 @@
 #show heading: set block(above: 1.4em, below: 0.9em)
 #show raw: set text(size: 9pt)
 #show figure.caption: set text(size: 9pt)
+#show table: set par(justify: false)
 
-// Figuras ainda não desenhadas: troque por #image("figuras/arquivo.png", width: 100%)
-#let pendente(texto) = rect(
-  width: 100%, height: 5cm, stroke: (dash: "dashed"), inset: 1em,
-  align(center + horizon, emph[Figura a inserir: #texto]),
-)
-
-#let parte(titulo) = {
-  v(0.8em)
-  heading(level: 1, numbering: none, titulo)
+// Legenda (título) acima de tabelas e figuras; "Fonte" abaixo.
+#show figure.where(kind: table): set figure.caption(position: top)
+#show figure.where(kind: image): set figure.caption(position: top)
+#show figure.where(kind: table): set block(breakable: true)
+#show figure.caption: set block(sticky: true)  // legenda não fica sozinha no fim da página
+#show figure: it => {
+  it
+  // Figuras com `outlined: false` são as adaptadas de Pohl et al. (2005).
+  let fonte = if it.outlined [Elaborada pelo autor] else [Adaptado de Pohl et al. (2005)]
+  align(center, text(size: 9pt)[Fonte: #fonte.])
+  v(1em)
 }
+
+// Tabela com título acima (legenda) e fonte abaixo.
+#let tabela(titulo, ..args) = figure(table(..args), caption: titulo)
 
 // ---------------- Capa ----------------
 #page(numbering: none)[
@@ -32,28 +38,22 @@
     )
   ]
 
-    #text(weight: "bold", size: 17pt)[Universidade Federal de Alagoas] \
-    #text(weight: "bold", size: 17pt)[Instituto de Computação] \
-    #v(2cm)
-    José Félix de Oliveira Neto
+    #text(weight: "bold", size: 17pt)[UNIVERSIDADE FEDERAL DE ALAGOAS] \
+    #text(weight: "bold", size: 17pt)[INSTITUTO DE COMPUTAÇÃO] \
     #v(1fr)
     #text(size: 16pt)[Linha de Produto de Software para Compiladores] \
     #v(0.3cm)
     _Microservices e Componentes de Software_
+    #v(0.8cm)
+    TÓPICOS EM ENGENHARIA DE SOFTWARE \
+    PROJETANDO LINHAS DE PRODUTO DE SOFTWARE
     #v(1fr)
-    #align(right)[
-      #box(width: 8cm)[
-        #set align(left)
-        #set par(justify: true)
-        Trabalho apresentado ao professor Arturo Hernández Domínguez para a
-        disciplina de Tópicos em Engenharia de Software --- Projetando Linhas
-        de Produto de Software.
-      ]
-    ]
+    José Félix de Oliveira Neto \
+    Professor Arturo Hernández Domínguez
     #v(1cm)
-    Repositório: LINK_DO_GITHUB
+    Repositório: #link("https://github.com/jotaf06/lps-compiladores")
     #v(0.5cm)
-    Maceió, DATA
+    Maceió, 11 de novembro de 2026
   ]
 ]
 
@@ -77,7 +77,26 @@ _features_ em uma tela de configuração e compila programas com ele. Cada fase 
 compilador é um microservice, e um microservice adicional de recomendação sugere
 produtos a partir do perfil (histórico de compilações) do usuário.
 
-#parte[Parte 1 --- Modelagem]
+== Objetivos
+
+O objetivo geral é projetar e implementar uma Linha de Produto de Software (LPS) para
+compiladores, usando *componentes de software* e *microservices*, aplicando os
+conhecimentos da disciplina. Os objetivos específicos são:
+
+#list(
+  [modelar a variabilidade da LPS (features, restrições e produtos) e representá-la na
+   notação de modelos de variabilidade de Pohl et al. (2005);],
+  [implementar os componentes reutilizáveis do compilador (lexer, parser, análise
+   semântica, otimizações e backends), todos com a mesma interface;],
+  [expor cada componente como um microservice e centralizar o acesso em um API gateway,
+   implantando com Docker apenas os serviços do produto escolhido;],
+  [permitir a configuração e a construção de novos produtos por uma tela de seleção de
+   features, que aplica as restrições do modelo;],
+  [recomendar produtos ao usuário a partir do seu histórico de compilações, por meio de um
+   microservice de recomendação;],
+  [documentar o desenvolvimento segundo o Scrum e demonstrar a LPS com testes
+   automatizados e com a execução do sistema.],
+)
 
 = Metodologia Ágil Escolhida
 
@@ -92,6 +111,11 @@ que organizam o trabalho:
    *Retrospectiva* para ajustar o processo.],
   [*Definição de pronto*: código com testes automatizados aprovados e documentado.],
 )
+
+O projeto foi desenvolvido de *01/10/2026 a 07/11/2026*, em cinco *sprints semanais*
+e uma sprint final curta de fechamento (seção 4). As cerimônias foram informais, conduzidas
+pelo próprio desenvolvedor: Planning no início de cada sprint e, ao final, Review do
+incremento e Retrospectiva com os ajustes para a sprint seguinte.
 
 = Técnicas de Reuso de Software Utilizadas
 
@@ -111,20 +135,38 @@ O projeto combina três técnicas de reuso:
 
 = Desenvolvimento do Projeto segundo o Scrum e as Técnicas de Reuso
 
-O desenvolvimento foi dividido em sprints. A cada sprint, o backlog foi planejado, um
-incremento foi entregue e demonstrado, e a retrospectiva orientou a sprint seguinte:
+O desenvolvimento foi dividido em sprints semanais entre 01/10 e 07/11/2026. Em cada
+sprint, o backlog foi planejado, um incremento foi entregue (Review) e a retrospectiva
+orientou a sprint seguinte.
 
-#list(
-  [*Sprint 1 --- Modelagem:* modelo de features, restrições, produtos e diagramas.],
-  [*Sprint 2 --- Componentes:* lexer, parser, análise semântica, otimizações,
-   backends, registro de componentes e testes. Produto: LPS funcionando em linha de
-   comando, com componentes no mesmo processo.],
-  [*Sprint 3 --- Microservices e implantação:* serviços FastAPI, orquestrador, gateway,
-   derivação de produto e `docker-compose` por produto.],
-  [*Sprint 4 --- Recomendação e tela de configuração:* microservice de recomendação
-   com histórico em SQLite, seletor de features, construção de novo produto e painel de
-   microservices.],
-  [*Sprint 5 --- Documentação:* relatório, diagramas e publicação do repositório.],
+#tabela(
+  [Sprints: entregas (Review) e retrospectivas.],
+  columns: (2.6cm, 2.3cm, 1fr, 1fr),
+  align: (left, left, left, left),
+  [*Sprint*], [*Período*], [*Entrega (Review)*], [*Retrospectiva*],
+  [1 --- Modelagem], [01/10 a 07/10],
+  [Modelo de features (obrigatórias, opcionais e backends alternativos), restrições e os produtos `mini`, `seguro` e `otimizado`.],
+  [A linguagem-fonte será simples, mas extensível: cada fase trata os nós da AST por tabelas de dispatch, o que permitirá adicionar funções.],
+
+  [2 --- Componentes], [08/10 a 14/10],
+  [Lexer, parser, análise semântica, otimizações e três backends, todos com a interface `run(data)` e um registro de componentes; 16 testes automatizados.],
+  [A interface única facilitou trocar variantes. A semântica das operações (divisão com truncamento, como em C) foi centralizada para que os backends dêem a mesma saída.],
+
+  [3 --- Microservices e implantação], [15/10 a 21/10],
+  [Serviço genérico FastAPI, orquestrador, gateway, derivação de produto e `docker-compose` por produto.],
+  [O Docker Compose precisou ser instalado, e nomes de serviço com `_` falham como hostname (trocados por `-`). A leitura dos elementos exigidos para o relatório revelou duas lacunas, a tela de configuração e a recomendação, e o backlog foi atualizado (US9 a US11).],
+
+  [4 --- Recomendação e tela], [22/10 a 28/10],
+  [Microservice `recommender` com histórico em SQLite, tela de configuração com as restrições aplicadas, construção de produto e painel de microservices.],
+  [A recomendação foi feita explicável e sempre válida (completa as dependências do modelo). A VM ganhou limite de passos para a demonstração não travar com laços infinitos.],
+
+  [5 --- Relatório], [29/10 a 04/11],
+  [Texto do relatório seguindo os elementos exigidos, com tabelas de features, restrições, produtos, endpoints e serviços.],
+  [O documento com os elementos do relatório serviu de lista de conferência para a estrutura do texto.],
+
+  [6 --- Fechamento], [05/11 a 07/11],
+  [Diagramas na notação de variabilidade de Pohl, capturas de tela, repositório no GitHub e revisão final.],
+  [Os testes manuais da tela acharam um defeito (a lista de produtos prontos não atualizava ao criar um produto), corrigido. As figuras foram geradas por script, o que as torna reproduzíveis.],
 )
 
 A técnica de reuso orientou a ordem: primeiro os ativos (componentes, Sprint 2), depois
@@ -135,7 +177,8 @@ sua exposição como serviços (Sprint 3) e, por fim, a derivação de produtos 
 
 #heading(level: 2, numbering: none)[Product Backlog]
 
-#table(
+#tabela(
+  [Product Backlog do projeto.],
   columns: (auto, 1fr, auto, auto),
   align: (left, left, center, center),
   [*ID*], [*História de usuário*], [*Prioridade*], [*Sprint*],
@@ -150,21 +193,30 @@ sua exposição como serviços (Sprint 3) e, por fim, a derivação de produtos 
   [US9], [Como usuário, quero receber recomendação de produto pelo meu histórico.], [Alta], [4],
   [US10], [Como usuário, quero uma tela para selecionar features e construir um produto.], [Alta], [4],
   [US11], [Como usuário, quero ver quais microservices estão no ar e em quais portas.], [Média], [4],
-  [US12], [Como avaliador, quero o relatório e o repositório documentados.], [Alta], [5],
+  [US12], [Como avaliador, quero o relatório com a modelagem e a implementação documentadas.], [Alta], [5],
+  [US13], [Como avaliador, quero o código publicado no GitHub e a demonstração com capturas de tela.], [Alta], [6],
 )
 
+As histórias US9 a US11 entraram no backlog durante a Sprint 3, depois da leitura dos
+elementos exigidos para o relatório (recomendação por perfil do usuário e tela de
+configuração).
+
+#block(breakable: false)[
 #heading(level: 2, numbering: none)[Sprint Backlog]
 
-#table(
+#tabela(
+  [Sprint Backlog por sprint.],
   columns: (auto, 1fr),
   align: (left, left),
   [*Sprint*], [*Tarefas (histórias)*],
-  [1], [Definir features e restrições (US1); diagrama de features; descrever produtos `mini`, `seguro` e `otimizado`.],
-  [2], [Lexer e parser (US2); backends Python, C e VM (US3); semântica (US4); constant folding e dead code (US5); testes.],
-  [3], [Serviço genérico FastAPI e orquestrador (US6); gateway (US7); `compose` por produto e Dockerfile (US8).],
-  [4], [Serviço `recommender` e histórico em SQLite (US9); tela de configuração e construção de produto (US10); painel de serviços (US11).],
-  [5], [Relatório em Typst, diagramas, README e GitHub (US12).],
+  [1 (01/10 a 07/10)], [Definir features e restrições (US1); descrever os produtos `mini`, `seguro` e `otimizado`.],
+  [2 (08/10 a 14/10)], [Lexer e parser (US2); backends Python, C e VM (US3); análise semântica (US4); constant folding e dead code (US5); testes automatizados.],
+  [3 (15/10 a 21/10)], [Serviço genérico FastAPI e orquestrador (US6); gateway (US7); `compose` por produto e Dockerfile (US8).],
+  [4 (22/10 a 28/10)], [Serviço `recommender` e histórico em SQLite (US9); tela de configuração e construção de produto (US10); painel de serviços (US11).],
+  [5 (29/10 a 04/11)], [Redação do relatório conforme os elementos exigidos (US12).],
+  [6 (05/11 a 07/11)], [Diagramas de variabilidade, capturas de tela, README e publicação no GitHub (US13).],
 )
+]
 
 == Diagrama de Features
 
@@ -173,7 +225,8 @@ sua exposição como serviços (Sprint 3) e, por fim, a derivação de produtos 
   caption: [Diagrama de features da LPS de compiladores.],
 )
 
-#table(
+#tabela(
+  [Descrição das features.],
   columns: (auto, 1fr),
   align: (left, left),
   [*Feature*], [*Descrição*],
@@ -188,7 +241,8 @@ sua exposição como serviços (Sprint 3) e, por fim, a derivação de produtos 
   [Recomendação], [Registra o histórico do usuário e recomenda um produto válido (seção 6.1).],
 )
 
-#table(
+#tabela(
+  [Restrições do modelo de features.],
   columns: (auto, auto, 1fr),
   align: (left, left, left),
   [*Restrição*], [*Tipo*], [*Justificativa*],
@@ -197,7 +251,8 @@ sua exposição como serviços (Sprint 3) e, por fim, a derivação de produtos 
   [Dead Code exige Constant Folding], [requires], [As condições só se tornam constantes após o folding.],
 )
 
-#table(
+#tabela(
+  [Produtos derivados da LPS.],
   columns: (auto, 1fr, auto),
   align: (left, left, left),
   [*Produto*], [*Features (além de Lexer e Parser)*], [*Alvo*],
@@ -220,6 +275,7 @@ dependências de artefato e restrições `requires_v_v`.
 #figure(
   image("figuras/legenda.svg", width: 100%),
   caption: [Notação de variabilidade utilizada nos diagramas.],
+  outlined: false,
 )
 
 Na Figura seguinte, à esquerda estão as camadas da arquitetura; à direita, os pontos de
@@ -231,7 +287,8 @@ parametriza: a variante escolhida determina quais serviços entram no pipeline.
   caption: [Arquitetura em camadas e diagrama de variabilidade.],
 )
 
-#table(
+#tabela(
+  [Pontos de variação e suas variantes.],
   columns: (auto, auto, 1fr),
   align: (left, left, left),
   [*Ponto de variação (VP)*], [*Tipo*], [*Variantes*],
@@ -283,8 +340,6 @@ produto.
    com o arquivo salvo e o `docker-compose.yml` gerado (direita).],
 )
 
-#parte[Arquitetura do Sistema com Microservices]
-
 = Arquitetura Baseada em Microserviços
 
 == Arquitetura do Sistema usando Microservices e Recomendação
@@ -318,7 +373,8 @@ válido do modelo de features:
 Todos os endpoints estão documentados no código (docstrings) e na interface interativa
 do FastAPI em `/docs`.
 
-#table(
+#tabela(
+  [Endpoints do API Gateway.],
   columns: (auto, auto, 1fr),
   align: (left, left, left),
   [*Método*], [*Rota*], [*Função*],
@@ -340,7 +396,8 @@ Os serviços das fases do compilador são instâncias do mesmo serviço genéric
 acrescido do que a fase produz; em caso de erro no programa-fonte, a resposta traz
 `errors`.
 
-#table(
+#tabela(
+  [Microservices: portas, entradas e saídas.],
   columns: (auto, auto, 1fr, 1fr),
   align: (left, left, left, left),
   [*Serviço*], [*Porta*], [*Entrada*], [*Saída acrescentada*],
@@ -357,7 +414,8 @@ acrescido do que a fase produz; em caso de erro no programa-fonte, a resposta tr
 
 Endpoints do `recommender`:
 
-#table(
+#tabela(
+  [Endpoints do microservice `recommender`.],
   columns: (auto, auto, 1fr),
   align: (left, left, left),
   [*Método*], [*Rota*], [*Função*],
@@ -399,11 +457,10 @@ Pela linha de comando, o equivalente é `python lps.py new <nome> <features...>`
 `python lps.py compile products/<nome>.json programa.src --run` e
 `python lps.py compose products/<nome>.json`.
 
-#parte[Parte 2 --- Implementação]
-
 = Tecnologias Utilizadas
 
-#table(
+#tabela(
+  [Tecnologias utilizadas em cada microservice.],
   columns: (3.9cm, 3.9cm, 2.4cm, 1fr),
   align: (left, left, left, left),
   [*Microservice*], [*Linguagem*], [*Banco de dados*], [*Observação*],
@@ -468,7 +525,7 @@ erros, serviços, gateway e recomendação.
 
 = Código no GitHub
 
-Todo o código está no repositório: *LINK_DO_GITHUB* (também na capa). O `README.md`
+Todo o código está no repositório: #link("https://github.com/jotaf06/lps-compiladores") (também na capa). O `README.md`
 descreve como instalar, testar, executar localmente, subir os microservices e usar o
 Docker.
 
